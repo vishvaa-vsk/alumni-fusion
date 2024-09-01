@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Page</title>
+    <link rel="stylesheet" href="REGISTRATION_PAGE.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="title-wrapper">
+        <h1>Student & Alumni Registration</h1>
+    </div>
+      
+    <div class="content-wrapper">
+        <form action=" ">
+
+            <!-- Name Field -->
+            <div class="input-box">
+                <input type="text" placeholder="Name" required oninput="validateNonEmpty(this)">
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <!-- College Name Field -->
+            <div class="input-box">
+                <input type="text" placeholder="College Name" required oninput="validateNonEmpty(this)">
+                <i class="bx bxs-school"></i>
+            </div>
+
+            <!-- Course Field -->
+            <div class="input-box">
+                <input type="text" placeholder="Course" required oninput="validateNonEmpty(this)">
+                <i class="bx bxs-book"></i>
+            </div>
+
+            <!-- Graduation Field (Dropdown) -->
+            <div class="input-box">
+                <select id="graduation" required oninput="validateNonEmpty(this)">
+                    <option value="" disabled selected>Select Graduation (UG/PG)</option>
+                    <option value="UG">UG</option>
+                    <option value="PG">PG</option>
+                </select>
+                <i class="bx bxs-book"></i>
+            </div>
+
+            <!-- Completion Year Field (Dropdown) -->
+            <div class="input-box">
+                <select id="completion-year" required oninput="validateNonEmpty(this)">
+                    <option value="" disabled selected>Select Completion Year</option>
+                </select>
+                <i class="bx bxs-calendar"></i>
+            </div>
+
+            <!-- Admission No Field -->
+            <div class="input-box">
+                <input type="text" placeholder="Admission No." required oninput="validateNonEmpty(this)">
+                <i class="bx bxs-id-card"></i>
+            </div>
+
+            <!-- City Field -->
+            <div class="input-box">
+                <input type="text" placeholder="City" required oninput="validateNonEmpty(this)">
+                <i class="bx bxs-map"></i>
+            </div>
+
+            <!-- Gmail Field -->
+            <div class="input-box">
+                <input type="email" placeholder="Gmail" id="gmail" oninput="validateGmail()" required>
+                <i class="bx bxs-envelope"></i>
+                <span class="checkmark" id="gmail-checkmark">✔</span>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-box">
+                <input type="password" placeholder="New Password" id="password" onfocus="showPasswordRequirements()" onblur="hidePasswordRequirements()" oninput="validatePassword()" required>
+                <span class="checkmark" id="password-checkmark">✔</span>
+                <span class="eye" onclick="togglePassword('password', 'hide1', 'hide2')">
+                    <eye class='bx bxs-hide' id="hide2"></eye>
+                    <eye class='bx bx-show' id="hide1"></eye>
+                </span>
+            </div>
+
+            <!-- Password Requirements Checklist -->
+            <div id="password-requirements" class="password-requirements">
+                <ul>
+                    <li id="length" class="invalid">8-16 characters</li>
+                    <li id="uppercase" class="invalid">At least one uppercase letter</li>
+                    <li id="lowercase" class="invalid">At least one lowercase letter</li>
+                    <li id="special" class="invalid">At least one special character</li>
+                </ul>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" id="confirm_password" 
+                    onfocus="showConfirmPasswordRequirements()" 
+                    onblur="hideConfirmPasswordRequirements()" 
+                    oninput="validateConfirmPassword()" required>
+                <span class="checkmark" id="confirm-password-checkmark">✔</span>
+                <span class="eye" onclick="togglePassword('confirm_password', 'hide3', 'hide4')">
+                    <eye class='bx bxs-hide' id="hide4"></eye>
+                    <eye class='bx bx-show' id="hide3"></eye>
+                </span>
+            </div>
+
+            <!-- Confirm Password Requirements -->
+            <div id="confirm-password-requirements" class="password-requirements">
+                <ul>
+                    <li id="match" class="invalid">Must match the new password</li>
+                </ul>
+            </div>
+            
+            <!-- Submit Box -->
+            <button type="submit" class="btn">Register</button>
+
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="REGISTRATION_PAGE.js"></script>      
+
+</body>
+
+</html>

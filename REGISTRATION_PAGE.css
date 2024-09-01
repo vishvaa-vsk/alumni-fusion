@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('Logo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden; /* Hide the scrollbar on the body */
+}
+
+.title-wrapper {
+  width: 100%; /* Full width */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7); /* Translucent background */
+  position: fixed;
+  top: 0; /* Move to the top */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 1000;
+  text-align: center;
+  pointer-events: none; /* Ensure it does not interfere with scrolling */
+  box-shadow: none; /* Remove the shadow */
+}
+
+/* Adjusted Content Wrapper */
+.content-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  height: calc(90vh - 150px); /* Adjust height to account for the fixed header */
+  margin: 160px auto 20px; /* Create space for the fixed title */
+  background: rgba(255, 255, 255, 0.416); /* Translucent background */
+  color: black;
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: none; /* Remove shadow */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Webkit browsers */
+.content-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.input-box input, .input-box select {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  font-size: 16px;
+  color: black;
+  padding: 0 75px 0 20px; /* Leave space for icons */
+  outline: none;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Other existing styles remain unchanged */
+.input-box input.valid {
+  box-shadow: 0 0 5px green;
+  border-color: green;
+}
+
+.input-box input.invalid {
+  box-shadow: 0 0 5px red;
+  border-color: red;
+}
+
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: black;
+  pointer-events: none;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box .checkmark {
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: green;
+  display: none;
+}
+.input-box input.valid + .checkmark {
+  display: inline;
+}
+
+.input-box .eye {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.input-box .bx {
+  line-height: 60px;
+}
+
+.input-box input::placeholder {
+  color: black;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.password-requirements {
+  display: none;
+  background: #f8f8f8;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.password-requirements ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.password-requirements li {
+  margin-bottom: 5px;
+}
+
+.valid::before {
+  content: "✔ ";
+  color: green;
+}
+
+.invalid::before {
+  content: "✖ ";
+  color: red;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: black;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+button:hover, .eye-icon:hover {
+  cursor: pointer;
+}
+
+.btn {
+  width: 98%; /* Slightly inside the wrapper */
+  height: 45px;
+  background: #FF6600;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  margin: 0 auto; /* Center the button */
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.btn:hover {
+  background-color: #e65c00;
+}
+
+/* Added for validation */
+.input-box input:valid,
+.input-box select:valid {
+  border-color: green;
+  box-shadow: 0 0 5px green;
+}
